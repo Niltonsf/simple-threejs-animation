@@ -160,10 +160,10 @@ const tick = () =>
 		const elapsedTime = clock.getElapsedTime();
 
 		// Animating camera		
-		if (startAnimation) {
-			camera.position.x = Math.sin(elapsedTime * 0.2) * 10;			
-			camera.position.z = Math.cos(elapsedTime * 0.2) * 10;
-		}
+		// if (startAnimation) {
+		// 	camera.position.x = Math.sin(elapsedTime * 0.2) * 10;			
+		// 	camera.position.z = Math.cos(elapsedTime * 0.2) * 10;
+		// }
 
     // Update controls
     controls.update()
