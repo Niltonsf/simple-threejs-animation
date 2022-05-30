@@ -126,6 +126,22 @@ const controls = new OrbitControls(camera, canvas)
 controls.enableDamping = true
 
 /**
+ * Events
+ */
+ let startAnimation = true;
+ document.addEventListener("click", () => {
+	 startAnimation = false;
+	 var timeleft = 6;	 
+	 var downloadTimer = setInterval(function(){
+		 if(timeleft <= 0){
+			 clearInterval(downloadTimer);			 			
+			 startAnimation = true;
+		 }
+		 timeleft -= 1;		
+	 }, 1000);		 
+ });
+
+/**
  * Renderer
  */
 const renderer = new THREE.WebGLRenderer({
@@ -141,11 +157,13 @@ const clock = new THREE.Clock()
 
 const tick = () =>
 {
-    const elapsedTime = clock.getElapsedTime()
+		const elapsedTime = clock.getElapsedTime();
 
-		// Animating camera
-		// camera.position.x = Math.sin(elapsedTime * 0.2) * 10;
-		// camera.position.z = Math.cos(elapsedTime * 0.2) * 10;
+		// Animating camera		
+		if (startAnimation) {
+			camera.position.x = Math.sin(elapsedTime * 0.2) * 10;			
+			camera.position.z = Math.cos(elapsedTime * 0.2) * 10;
+		}
 
     // Update controls
     controls.update()
