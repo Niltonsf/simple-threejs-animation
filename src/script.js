@@ -144,8 +144,8 @@ const tick = () =>
     const elapsedTime = clock.getElapsedTime()
 
 		// Animating camera
-		camera.position.x = Math.sin(elapsedTime * 0.2) * 10;
-		camera.position.z = Math.cos(elapsedTime * 0.2) * 10;
+		// camera.position.x = Math.sin(elapsedTime * 0.2) * 10;
+		// camera.position.z = Math.cos(elapsedTime * 0.2) * 10;
 
     // Update controls
     controls.update()
